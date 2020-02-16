@@ -538,9 +538,9 @@ namespace LlamaLibrary
 
         public static KeyValuePair<int, int> GetDoubleDownInfo()
         {
-            var OpportunitiesRegex = new Regex(@".* opportunities remaining: (\d)", RegexOptions.Compiled);
+            var OpportunitiesRegex = new Regex(@".* 还能够挑战: (\d)次", RegexOptions.Compiled);
 
-            var TimeRegex = new Regex(@"Time Remaining: (\d):(\d+).*", RegexOptions.Compiled);
+            var TimeRegex = new Regex(@"剩余时间: (\d):(\d+).*", RegexOptions.Compiled);
 
             var offset0 = 458;
             var offset2 = 352;
@@ -570,7 +570,7 @@ namespace LlamaLibrary
 
         public static int GetDoubleDownReward()
         {
-            var RewardRegex = new Regex(@".*Current payout: .*[^\d](\d+)[^\d].* MGP", RegexOptions.Compiled);
+            var RewardRegex = new Regex(@".* 获得的金蝶币: .*[^\d](\d+)[^\d].*", RegexOptions.Compiled);
 
             //Regex TimeRegex = new Regex(@"Time Remaining: (\d):(\d+).*", RegexOptions.Compiled);
 
