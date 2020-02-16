@@ -288,13 +288,13 @@ namespace LlamaLibrary
             unit.Interact();
             await Coroutine.Wait(5000, () => SelectString.IsOpen);
             if (SelectString.IsOpen)
-                SelectString.ClickLineContains("Aethernet");
+                SelectString.ClickLineContains("都市传送网");
 
             await Coroutine.Sleep(500);
 
             await Coroutine.Wait(5000, () => SelectString.IsOpen);
             if (SelectString.IsOpen)
-                SelectString.ClickLineContains("Minion");
+                SelectString.ClickLineContains("宠物广场");
 
             await Coroutine.Sleep(1000);
 
@@ -317,25 +317,25 @@ namespace LlamaLibrary
             //Hatchet Ready
             if (e.ChatLogEntry.MessageType == (MessageType) 2105)
             {
-                if (e.ChatLogEntry.FullLine.IndexOf("nothing", StringComparison.OrdinalIgnoreCase) >= 0)
+                if (e.ChatLogEntry.FullLine.IndexOf("手感", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     //Logger.Info("Not Close");
                     HitResult = MiniGameResult.NotClose;
                     GamelogManager.MessageRecevied -= GamelogManagerOnMessageRecevied;
                 }
-                else if (e.ChatLogEntry.FullLine.IndexOf("something close", StringComparison.OrdinalIgnoreCase) >= 0)
+                else if (e.ChatLogEntry.FullLine.IndexOf("什么东西", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     //Logger.Info("Close");
                     HitResult = MiniGameResult.Close;
                     GamelogManager.MessageRecevied -= GamelogManagerOnMessageRecevied;
                 }
-                else if (e.ChatLogEntry.FullLine.IndexOf("very", StringComparison.OrdinalIgnoreCase) >= 0)
+                else if (e.ChatLogEntry.FullLine.IndexOf("相当接近", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     //Logger.Info("Very Close");
                     HitResult = MiniGameResult.VeryClose;
                     GamelogManager.MessageRecevied -= GamelogManagerOnMessageRecevied;
                 }
-                else if (e.ChatLogEntry.FullLine.IndexOf("right on", StringComparison.OrdinalIgnoreCase) >= 0)
+                else if (e.ChatLogEntry.FullLine.IndexOf("正中", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     //Logger.Info("On Top");
                     HitResult = MiniGameResult.OnTop;
