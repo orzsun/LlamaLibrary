@@ -63,8 +63,6 @@ namespace LlamaLibrary
             var lang = (Language) typeof(DataManager).GetFields(BindingFlags.Static | BindingFlags.NonPublic)
                 .First(i => i.FieldType == typeof(Language)).GetValue(null);
 
-            if (lang != Language.Eng) TreeRoot.Stop("Only works on English Clients for now");
-
             await StartOutOnLimb();
             //Logger.LogCritical("Start Done");
             await Coroutine.Wait(5000, () => AgentOutOnLimb.Instance.IsReadyBotanist);
